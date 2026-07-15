@@ -3,20 +3,17 @@ import React from "react";
 const TodoList = ({ todos , handleComplete }) => {
     return (
         <ul>
-            {todos.map((todo) => (
+            {todos
+                .filter(todo => !todo.completed)
+                .map(todo => (
                 <li key={todo.id}>
                     <span>{todo.text}</span>
 
-                    
-                    {!todo.completed && (
-                        <button onClick={() => handleComplete(todo.id)}>
-                            Complete
-                        </button>
-                    )}
-                       
-                   
+                    <button onClick={() => handleComplete(todo.id)}>
+                    Complete
+                    </button>
                 </li>
-            ))}
+                ))}
         </ul>
     )
 }
