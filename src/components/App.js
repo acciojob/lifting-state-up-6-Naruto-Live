@@ -10,15 +10,16 @@ const App = () => {
     {id: 3, text: "Practice JavaScript ", completed: false}
   ]);
 
-  const handleComplete = (id) => {
-    setTodos(prevTodos =>
-      prevTodos.map(todo =>
-        todo.id === id ? {...todo, completed: true} : todo
-      )
-    );
-  };
+const handleComplete = (id) => {
+  setTodos(prevTodos =>
+    prevTodos.map(todo =>
+      todo.id === id
+        ? { ...todo, completed: true }
+        : todo
+    )
+  );
+};
 
-  
   return (
     <div>
         <TodoList 
